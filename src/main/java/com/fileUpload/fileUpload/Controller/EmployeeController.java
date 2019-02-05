@@ -92,6 +92,17 @@ public class EmployeeController {
         return employeeRepository.findAll(PageRequest.of(pageNum, pageSize));
     }
 
+    @GetMapping(path = "/{id}")
+    public @ResponseBody
+    Employee getEmployeeById(@PathVariable Long id) {
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+        if (optionalEmployee.isPresent()) {
+            return optionalEmployee.get();
+        } else {
+            throw new MyFileNotFoundException("File not found");
+        }
+    }
+
     //Delete BY id API
     @PutMapping(path = "/deleteFile/{id}")
     public @ResponseBody
