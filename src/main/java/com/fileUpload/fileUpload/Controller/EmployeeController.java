@@ -92,6 +92,7 @@ public class EmployeeController {
         return employeeRepository.findAll(PageRequest.of(pageNum, pageSize));
     }
 
+    //Get By id API
     @GetMapping(path = "/{id}")
     public @ResponseBody
     Employee getEmployeeById(@PathVariable Long id) {
