@@ -4,7 +4,6 @@ import com.fileUpload.fileUpload.Model.Employee;
 import com.fileUpload.fileUpload.Repository.EmployeeRepository;
 import com.fileUpload.fileUpload.Utils.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,9 +11,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.util.Date;
 
 @RestController
-@RequestMapping(path = "/api/employees")
+@RequestMapping(path = "/api/employees")// It is a base ULR
 public class EmployeeController {
-    private static final String FILE_SERVICE_STORAGE_DIRECTORY = "employee";
+    private static final String FILE_SERVICE_STORAGE_DIRECTORY = "employee"; // It is a path where we can save our file to store in our system
 
     @Autowired
     EmployeeRepository employeeRepository;
